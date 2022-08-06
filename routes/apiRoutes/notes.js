@@ -1,7 +1,9 @@
-const { notes } = require('../../db/db.json');
 const router = require('express').Router();
-const path  = require('path')
 const fs = require('fs')
+const { notes } = require('../../db/db.json');
+const path  = require('path')
+
+
 
 function createNewNote(body, notesArray) {
     const note = body;
@@ -15,6 +17,7 @@ function createNewNote(body, notesArray) {
 
 router.get("/notes", (req, res) => {
     let results = notes;
+
     res.json(results);
 });
 
